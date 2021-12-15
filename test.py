@@ -1,7 +1,7 @@
-from tqdm import tqdm
-from time import sleep
+import random
 
-with tqdm(total=100) as pbar:
-    for i in range(10):
-        sleep(0.1)
-        pbar.update(10)
+while True:
+    n = random.random()  # 0-1
+    print(n)
+    if n < 0.1:
+        break

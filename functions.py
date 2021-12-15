@@ -3,26 +3,33 @@ import os
 from time import sleep
 from tqdm import tqdm
 import random
-import settings
-import main
+from settings import *
 
-settings.HP()
+def fmenu():
 
-def f(x):
-        match x:
-            case 'a':
-
-                r = random.randint(0,1)
+    Health = player("88888",100,100,100)
+    while True:
+        os.system('cls')
+        print ("What would you do?")
+        menu = input("| a: Damage | b:Heal | c: escape | ") #menu   
+        match menu:
+            # Damage
+            case 'a': 
+                r = 1
                 if r == 1:
-                    for x in range(101):
-                        z = (settings.HP())-x
-                        print ("disparo",z,"!")
-                    main.start()
-                        
+                    os.system('cls')
+                    y = random.randint(3,5)
+                    for x in range(y):
+                        z = Health.health - x
+                        print ("shots",z,"!")
+                    time.sleep(0.5)
+
                 elif r == 0:
                     print("you miss all the shoots")
-
-            case 'b':
+                    os.system('cls')
+                    time.sleep(0.5)
+            # heal
+            case 'b': 
                 os.system('cls')
                 pbar = tqdm(total= 100)
                 for i in range(100):
@@ -31,8 +38,10 @@ def f(x):
                         pbar.set_description("Healing in progress")
                         pbar.update(i)
                 pbar.close()
-            case 'c':
+
+            case 'c': # escape
                 print ("you have espaced")
-            case _:
-                print ("what?")
-                pass
+                break
+            case _: #in case invalid selection
+                print ("bye!")
+                break

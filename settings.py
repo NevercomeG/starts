@@ -1,8 +1,12 @@
 # settings.py
 # Global Variables
 global health
-health = 100
+global armor
+global stamin
 
-def HP():
-    x = health
-    return (x)
+class player:
+    def __init__(self,userid,health,armor,stamin):
+        self.userid = userid
+        self.health = health
+        self.armor = armor
+        self.stamin = stamin

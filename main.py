@@ -1,3 +1,4 @@
 import hellow
 
-exec(open('hellow.py').read())
+def return2():
+    hellow.main()
