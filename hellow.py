@@ -1,6 +1,12 @@
-def shoot():
-    for x in range (100):
-        print (x)
+from re import X
+import os
+import functions
+import settings
 
+settings.HP()
 
-shoot()
+os.system('cls')
+
+print ("What would you do?")
+menu = input("| a: Damage | b:Heal | c: escape | ")
+functions.f(menu)
